@@ -25,7 +25,8 @@
 
     <%= f.label :image, '圖片'%>
     <%= image_tag @restaurant.image, width: '300px' if @restaurant.image? %>
-    <%= f.file_field :image %>
+    <%= f.filestack_field :image, '上傳圖片!',  pickerOptions: {accept: 'image/*'}, id: 'unique-id' %>
+
 
     <%= f.submit  %>
 <% end  %>
