@@ -10,7 +10,7 @@ namespace :dev do
       filelink_array.push(filelink)
     end
 
-    3.times do |i|
+    13.times do |i|
       restaurant = Restaurant.new(name: FFaker::Name.name,
         opening_hours: FFaker::Time.date,
         address: FFaker::Address.street_address,
