@@ -1,5 +1,5 @@
 <h1><%= @restaurant.name %></h1>
-<%= image_tag @restaurant.image, width: '600px'%>
+<%= filestack_image @restaurant.image, transform: filestack_transform.resize(width:100, height:100) %>
 Opening_hour: <%= @restaurant.opening_hours %><br>
 TEL: <%= @restaurant.tel %><br>
 Address: <%= @restaurant.address %>
