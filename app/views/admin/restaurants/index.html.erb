@@ -1,5 +1,10 @@
 <div class="container">
   <h1>餐廳後台</h1>
+  <div>
+    <%= link_to 'Restaurant', admin_restaurants_path %> |
+    <%= link_to 'Categories', admin_categories_path %>
+  </div>
+  <br>
   <div class="col-md-12">
     <div>
       <%= link_to "新增餐廳", new_admin_restaurant_path, class: "btn btn-primary" %>
