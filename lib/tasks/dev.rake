@@ -25,7 +25,7 @@ namespace :dev do
                          description: FFaker::Lorem.paragraph,
                          category: Category.all.sample
       )
-      
+
 
       #Sam範例
       # Dir.glob("#{Rails.root}/lib/assets/images/*.jpg").map do |pic|
