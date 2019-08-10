@@ -2,24 +2,30 @@ namespace :dev do
   task fake: :environment do
     Restaurant.destroy_all
 
-    filelink = ""
-    filelink_array = []
-    Dir.glob("#{Rails.root}/lib/assets/images/*.jpg").map do |pic|
-      client = FilestackClient.new('AZrsl1q84SWqU9xu0VPEsz')
-      filelink = client.upload(filepath: pic)
-      filelink_array.push(filelink)
-    end
+    # filelink = ""
+    # filelink_array = []
+    # Dir.glob("#{Rails.root}/lib/assets/images/*.jpg").map do |pic|
+    #   client = FilestackClient.new('AZrsl1q84SWqU9xu0VPEsz')
+    #   filelink = client.upload(filepath: pic)
+    #   filelink_array.push(filelink)
+    # end
+
 
     13.times do |i|
-      restaurant = Restaurant.new(name: FFaker::Name.name,
-        opening_hours: FFaker::Time.date,
-        address: FFaker::Address.street_address,
-        description: FFaker::Lorem.paragraph,
-        tel: FFaker::PhoneNumber.phone_number
+      # restaurant = Restaurant.new(name: FFaker::Name.name,
+      #   opening_hours: FFaker::Time.date,
+      #   address: FFaker::Address.street_address,
+      #   description: FFaker::Lorem.paragraph,
+      #   tel: FFaker::PhoneNumber.phone_number
+      # )
+      Restaurant.create!(name: FFaker::Name.first_name,
+                         opening_hours: FFaker::Time.datetime,
+                         tel: FFaker::PhoneNumber.short_phone_number,
+                         address: FFaker::Address.street_address,
+                         description: FFaker::Lorem.paragraph,
+                         category: Category.all.sample
       )
-
-      restaurant.image = filelink_array[rand(filelink_array.size)].url
-      restaurant.save!
+      
 
       #Sam範例
       # Dir.glob("#{Rails.root}/lib/assets/images/*.jpg").map do |pic|
