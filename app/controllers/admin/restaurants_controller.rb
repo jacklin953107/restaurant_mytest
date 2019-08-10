@@ -1,5 +1,4 @@
-class Admin::RestaurantsController < ApplicationController
-  before_action :authenticate_admin
+class Admin::RestaurantsController < BaseController
   before_action :find_restaurant, only: [:show, :edit, :update, :destroy]
   def index
     #@restaurants = Restaurant.all
