@@ -23,7 +23,8 @@ namespace :dev do
                          tel: FFaker::PhoneNumber.short_phone_number,
                          address: FFaker::Address.street_address,
                          description: FFaker::Lorem.paragraph,
-                         category: Category.all.sample
+                         category: Category.all.sample,
+                         image: File.open(Rails.root.join("fake_image/#{rand(1..12)}.jpg"))
       )
 
 
