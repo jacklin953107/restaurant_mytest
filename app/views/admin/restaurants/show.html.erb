@@ -1,9 +1,26 @@
-<h1><%= @restaurant.name %></h1>
-<%= filestack_image @restaurant.image, transform: filestack_transform.resize(width:100, height:100) %>
-Opening_hour: <%= @restaurant.opening_hours %><br>
-TEL: <%= @restaurant.tel %><br>
-Address: <%= @restaurant.address %>
-Discription: <%= @restaurant.description %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @restaurant.name %></h1>
+    </div>
+    <div class="col-md-4">
+      <%= image_tag @restaurant.image, class: "img-responsive center-block" %>
+      <br>
+      <div class="well">
+        <ul class="list-unstyled">
+          <li><strong>營業時間：</strong><%= @restaurant.opening_hours %></li>
+          <li><strong>電話：</strong><%= @restaurant.tel %></li>
+          <li><strong>住址：</strong><%= @restaurant.address %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <%= simple_format @restaurant.description %>
+    </div>
+    <div class="clearfix"></div>
+    <hr>
+  </div>
+</div>
 
 <br>
 
