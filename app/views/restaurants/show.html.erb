@@ -21,7 +21,8 @@
     </div>
     <hr>
     <%= link_to 'Dashboard', dashboard_restaurant_path(@restaurant), class: "btn btn-primary" %>
-
+    <%= link_to '喜歡', favorite_restaurant_path(@restaurant), method: :post, class: "btn btn-primary" %>
+    <%= link_to '取消喜歡', unfavorite_restaurant_path(@restaurant), method: :post, class: "btn btn-info" %>
     <div class="clearfix"></div>
 
     <hr>
