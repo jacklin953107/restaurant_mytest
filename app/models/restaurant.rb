@@ -11,6 +11,12 @@ class Restaurant < ApplicationRecord
   def is_favorited?(user)
     self.favorited_users.include?(user)
   end
+  # def count_favorite
+  #   count = Favorite.where(restaurant: self.id).size
+  #   Restaurant.find(self.id).update!(favorites_count: count)
+  #   # self.favorites_count = self.favorites.size
+  #   # self.save
+  # end
 end
 
 
