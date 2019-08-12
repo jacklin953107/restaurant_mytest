@@ -8,6 +8,12 @@ class User < ApplicationRecord
   has_many :restaurants, through: :comments
   has_many :favorites, dependent: :destroy
   has_many :favorited_restaurants, through: :favorites, source: :restaurant
+  has_many :likes, dependent: :destroy
+  has_many :liked_restaurants, through: :likes, source: :restaurant
+
+  def is_liked?(restaurant)
+    self.liked_restaurants.include?(restaurant)
+  end
 
   def admin?
     self.role == "admin"
