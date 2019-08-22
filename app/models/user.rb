@@ -15,6 +15,9 @@ class User < ApplicationRecord
   has_many :inverse_followships, class_name: "Followship", foreign_key: "following_id"
   has_many :followers, through: :inverse_followships, source: :user
 
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
+
   def is_liked?(restaurant)
     self.liked_restaurants.include?(restaurant)
   end
@@ -25,6 +28,10 @@ class User < ApplicationRecord
 
   def following?(user)
     self.followings.include?(user)
+  end
+
+  def friend?(user)
+    self.friends.include?(user)
   end
 
 end
